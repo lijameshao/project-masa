@@ -1,0 +1,57 @@
+version: '2.0'
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
+intents:
+- greet
+- inform
+- subscribe
+- faq
+slots:
+  email:
+    type: unfeaturized
+    influence_conversation: false
+responses:
+  utter_greet:
+  - text: |
+      Hello! How can I help you?
+  - text: |
+      Hi!
+  utter_ask_email:
+  - text: |
+      What is your email address?
+  utter_subscribed:
+  - text: |
+      Check your inbox at {email} in order to finish subscribing to the newsletter!
+  - text: You're all set! Check your inbox at {email} to confirm your subscription.
+  utter_faq/ask_quotes:
+  - text: |
+      The challenge for anyone interested in making progress is to simultaneously have (1) the confidence to go after what you want and (2) the humility to accept who you are right now and (3) the willingness to build skills that bridge the gap between 1 and 2.
+  - text: |
+      Share your work, there'll be people who says your work is crap but that's perfect because it helps us fail forward.
+  - text: |
+      It is not your business to determine how good it is nor how valuable nor how it compares with other expressions. It is your business to keep it yours clearly and directly, to keep the channel open
+  - text: |
+      If the change doesn't seem to payoff, focus on the current trajectory instead of result
+  utter_faq/ask_focus:
+  - text: |
+      Make use of implementation intentions (if-then responses)
+  - text: |
+      Remove distractions from our lives and act NOW
+  - text: |
+      Design separate environment - one optimised for work (high-stress), the other for play (recovery)
+  utter_faq/ask_habit:
+  - text: |
+      Two-minute rule - make new activity feel manageable by distilling them into a two minute activity
+  - text: |
+      Make good behaviours as easy to pick up as possible, whilst increasing friction to bad habits
+  - text: |
+      Create a habit tracker, cross off the actions that you manage to achieve each day
+actions:
+- '...'
+- utter_greet
+- utter_subscribed
+forms:
+  newsletter_form:
+    email:
+    - type: from_text

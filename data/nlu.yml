@@ -1,0 +1,39 @@
+nlu:
+- intent: greet
+  examples: |
+    - Hi
+    - Hey!
+    - Hallo
+    - Good day
+    - Good morning
+
+- intent: subscribe
+  examples: |
+    - I want to get the newsletter
+    - Can you send me the newsletter?
+    - Can you sign me up for the newsletter?
+
+- intent: inform
+  examples: |
+    - I am feeling unproductive
+    - I can't focus
+    - unmotivated
+    - I feel so pumped
+
+- intent: faq/ask_quotes
+  examples: |
+    - Give me some quotes please?
+    - Can I have some quotes please?
+    - Would you be able to give me a quote please?
+
+- intent: faq/ask_focus
+  examples: |
+    - Help me to focus please
+    - I can't concentrate, can you help me?
+    - I am being distracted, what can I do?
+
+- intent: faq/ask_habit
+  examples: |
+    - How do I form habits?
+    - I keep failing back to my original self, what should I do?
+    - Can you advise me on consistent execution?
