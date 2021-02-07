@@ -1,17 +1,66 @@
+version: "2.0"
 nlu:
 - intent: greet
   examples: |
+    - hey
+    - hello
+    - hi
+    - good morning
+    - good evening
+    - hey there
     - Hi
-    - Hey!
-    - Hallo
-    - Good day
-    - Good morning
-
-- intent: subscribe
+- intent: goodbye
   examples: |
-    - I want to get the newsletter
-    - Can you send me the newsletter?
-    - Can you sign me up for the newsletter?
+    - bye
+    - goodbye
+    - see you around
+    - see you later
+- intent: affirm
+  examples: |
+    - yes
+    - indeed
+    - of course
+    - that sounds good
+    - correct
+    - sure
+    - ok
+    - why not
+    - ok great
+    - yes I did
+    - yeah, great
+    - pretty good
+    - fine
+    - You bet
+    - I sure did
+    - more or less
+- intent: deny
+  examples: |
+    - no
+    - never
+    - I don't think so
+    - no way
+    - not really
+    - none
+    - absolutely not
+    - no thanks
+    - didn't do any
+    - no I didn't
+    - could have been better
+    - not great
+    - nope
+- intent: thankyou
+  examples: |
+    - okay great thanks
+    - thank you
+    - sure thanks
+    - thanks bye
+    - thanks
+- intent: bot_challenge
+  examples: |
+    - are you a bot?
+    - are you a human?
+    - am I talking to a bot?
+    - am I talking to a human?
 
 - intent: inform
   examples: |

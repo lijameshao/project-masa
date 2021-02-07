@@ -2,28 +2,29 @@ version: '2.0'
 session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true
+
 intents:
-- greet
-- inform
-- subscribe
-- faq
-slots:
-  email:
-    type: unfeaturized
-    influence_conversation: false
+  - greet
+  - goodbye
+  - affirm
+  - deny
+  - bot_challenge
+  - inform
+  - thankyou
+  - faq
+
 responses:
   utter_greet:
   - text: |
       Hello! How can I help you?
   - text: |
       Hi!
-  utter_ask_email:
-  - text: |
-      What is your email address?
-  utter_subscribed:
-  - text: |
-      Check your inbox at {email} in order to finish subscribing to the newsletter!
-  - text: You're all set! Check your inbox at {email} to confirm your subscription.
+  utter_goodbye:
+  - text: "See you! Bye!"
+
+  utter_iamabot:
+  - text: "I am a bot, powered by Rasa."
+  
   utter_faq/ask_quotes:
   - text: |
       The challenge for anyone interested in making progress is to simultaneously have (1) the confidence to go after what you want and (2) the humility to accept who you are right now and (3) the willingness to build skills that bridge the gap between 1 and 2.
@@ -47,11 +48,7 @@ responses:
       Make good behaviours as easy to pick up as possible, whilst increasing friction to bad habits
   - text: |
       Create a habit tracker, cross off the actions that you manage to achieve each day
+
 actions:
 - '...'
 - utter_greet
-- utter_subscribed
-forms:
-  newsletter_form:
-    email:
-    - type: from_text
