@@ -11,7 +11,9 @@ intents:
   - bot_challenge
   - inform
   - thankyou
-  - faq
+  - ask_quotes
+  - ask_focus
+  - ask_habits
 
 responses:
   utter_greet:
@@ -25,7 +27,7 @@ responses:
   utter_iamabot:
   - text: "I am a bot, powered by Rasa."
   
-  utter_faq/ask_quotes:
+  utter_quotes:
   - text: |
       The challenge for anyone interested in making progress is to simultaneously have (1) the confidence to go after what you want and (2) the humility to accept who you are right now and (3) the willingness to build skills that bridge the gap between 1 and 2.
   - text: |
@@ -34,14 +36,14 @@ responses:
       It is not your business to determine how good it is nor how valuable nor how it compares with other expressions. It is your business to keep it yours clearly and directly, to keep the channel open
   - text: |
       If the change doesn't seem to payoff, focus on the current trajectory instead of result
-  utter_faq/ask_focus:
+  utter_focus:
   - text: |
       Make use of implementation intentions (if-then responses)
   - text: |
       Remove distractions from our lives and act NOW
   - text: |
       Design separate environment - one optimised for work (high-stress), the other for play (recovery)
-  utter_faq/ask_habit:
+  utter_habits:
   - text: |
       Two-minute rule - make new activity feel manageable by distilling them into a two minute activity
   - text: |
