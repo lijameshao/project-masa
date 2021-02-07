@@ -1,19 +1,31 @@
+version: "2.0"
 rules:
- - rule: activate subscribe form
-   steps:
-   - intent: subscribe
-   - action: newsletter_form
-   - active_loop: newsletter_form
-
- - rule: submit form
-   condition:
-   - active_loop: newsletter_form
-   steps:
-   - action: newsletter_form
-   - active_loop: null
-   - action: utter_subscribed
-
- - rule: respond to FAQs
-   steps:
-   - intent: faq
-   - action: utter_faq
+  - rule: Greeting
+    steps:
+    - intent: greet
+    - action: utter_greet
+  - rule: Goodbye
+    steps:
+    - intent: goodbye
+    - action: utter_goodbye
+  - rule: Thanks
+    steps:
+    - intent: thankyou
+    - action: utter_no_worries
+    - action: utter_goodbye
+  - rule: Bot challenge
+    steps:
+    - intent: bot_challenge
+    - action: utter_iamabot
+  - rule: Ask quotes
+    steps:
+    - intent: ask_quotes
+    - action: utter_quotes
+  - rule: Ask focus
+    steps:
+    - intent: ask_focus
+    - action: utter_focus
+  - rule: ask habits
+    steps:
+    - intent: ask_habits
+    - action: utter_habits
