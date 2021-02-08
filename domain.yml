@@ -21,6 +21,20 @@ responses:
       Hello! How can I help you?
   - text: |
       Hi!
+
+  utter_did_that_help:
+  - text: "Did that help you?"
+
+  utter_cheer_up:
+  - text: "Here is something to cheer you up:"
+    image: "https://i.imgur.com/nGF1K8f.jpg"
+
+  utter_no_worries:
+  - text: "No problem :)"
+
+  utter_happy:
+  - text: "I am so happy to hear that! :D"
+
   utter_goodbye:
   - text: "See you! Bye!"
 
@@ -36,6 +50,7 @@ responses:
       It is not your business to determine how good it is nor how valuable nor how it compares with other expressions. It is your business to keep it yours clearly and directly, to keep the channel open
   - text: |
       If the change doesn't seem to payoff, focus on the current trajectory instead of result
+
   utter_focus:
   - text: |
       Make use of implementation intentions (if-then responses)
@@ -43,6 +58,7 @@ responses:
       Remove distractions from our lives and act NOW
   - text: |
       Design separate environment - one optimised for work (high-stress), the other for play (recovery)
+
   utter_habits:
   - text: |
       Two-minute rule - make new activity feel manageable by distilling them into a two minute activity
@@ -50,7 +66,3 @@ responses:
       Make good behaviours as easy to pick up as possible, whilst increasing friction to bad habits
   - text: |
       Create a habit tracker, cross off the actions that you manage to achieve each day
-
-actions:
-- '...'
-- utter_greet

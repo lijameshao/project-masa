@@ -4,28 +4,34 @@ rules:
     steps:
     - intent: greet
     - action: utter_greet
+
   - rule: Goodbye
     steps:
     - intent: goodbye
     - action: utter_goodbye
+
   - rule: Thanks
     steps:
     - intent: thankyou
     - action: utter_no_worries
     - action: utter_goodbye
+
   - rule: Bot challenge
     steps:
     - intent: bot_challenge
     - action: utter_iamabot
+
   - rule: Ask quotes
     steps:
     - intent: ask_quotes
     - action: utter_quotes
+
   - rule: Ask focus
     steps:
     - intent: ask_focus
     - action: utter_focus
-  - rule: ask habits
+
+  - rule: Ask habits
     steps:
     - intent: ask_habits
     - action: utter_habits

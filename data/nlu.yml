@@ -9,12 +9,14 @@ nlu:
     - good evening
     - hey there
     - Hi
+
 - intent: goodbye
   examples: |
     - bye
     - goodbye
     - see you around
     - see you later
+
 - intent: affirm
   examples: |
     - yes
@@ -33,6 +35,7 @@ nlu:
     - You bet
     - I sure did
     - more or less
+
 - intent: deny
   examples: |
     - no
@@ -48,6 +51,7 @@ nlu:
     - could have been better
     - not great
     - nope
+
 - intent: thankyou
   examples: |
     - okay great thanks
@@ -55,19 +59,13 @@ nlu:
     - sure thanks
     - thanks bye
     - thanks
+
 - intent: bot_challenge
   examples: |
     - are you a bot?
     - are you a human?
     - am I talking to a bot?
     - am I talking to a human?
-
-- intent: inform
-  examples: |
-    - I am feeling unproductive
-    - I can't focus
-    - unmotivated
-    - I feel so pumped
 
 - intent: ask_quotes
   examples: |
