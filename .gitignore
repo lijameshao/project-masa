@@ -132,6 +132,5 @@ dmypy.json
 
 # Rasa
 credentials.yml
-endpoints.yml
 Models/
 
