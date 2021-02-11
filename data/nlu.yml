@@ -84,3 +84,31 @@ nlu:
     - How do I form habits?
     - I keep failing back to my original self, what should I do?
     - Can you advise me on consistent execution?
+
+- intent: inform
+  examples: |
+    - I am feeling [fantastic](feelings) today
+    - I feel [pumped](feelings) today
+    - [stressed](feelings)
+    - [overwhelmed](feelings)
+    - [happy](feelings)
+    - It's so [depressing](feelings)
+    - I am [over the moon](feelings)
+    - I could have [slept earlier](improvements)
+    - I could have [focused more](improvements)
+    - I need to be [less distracted](improvements)
+    - I didn't manage to [finish my tasks](improvements)
+    - Be more strategic on tasks
+    - I am intimidated to commit to too many things, the obstable is in my mind
+    - I need to think more positive
+    - The day was perfect, I followed the plans and I am not stressed anymore
+
+- intent: out_of_scope
+  examples: |
+    - Can we do this next time actually
+    - stop please
+    - You are not helping
+    - I want to go travelling
+    - Why are you asking me this?
+    - I want to skip
+    - I've changed my mind

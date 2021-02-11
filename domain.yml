@@ -1,7 +1,7 @@
 version: '2.0'
 session_config:
   session_expiration_time: 60
-  carry_over_slots_to_new_session: true
+  carry_over_slots_to_new_session: false
 
 intents:
   - greet
@@ -9,18 +9,35 @@ intents:
   - affirm
   - deny
   - bot_challenge
-  - inform
   - thankyou
   - ask_quotes
   - ask_focus
   - ask_habits
+  - inform
+  - out_of_scope
+
+slots:
+  feelings:
+    type: any
+  stuck_to_plans:
+    type: any
+  focus_on_tasks:
+    type: any
+  strategic:
+    type: any
+  improvements:
+    type: any
+  self_reflection:
+    type: any
+
+entities:
+  - feelings
+  - improvements
 
 responses:
   utter_greet:
   - text: |
-      Hello! How can I help you?
-  - text: |
-      Hi!
+      Hello! Do you want to do your daily self-reflection now?
 
   utter_did_that_help:
   - text: "Did that help you?"
@@ -28,6 +45,9 @@ responses:
   utter_cheer_up:
   - text: "Here is something to cheer you up:"
     image: "https://i.imgur.com/nGF1K8f.jpg"
+
+  utter_thankyou:
+  - text: "Thank you! :D"
 
   utter_no_worries:
   - text: "No problem :)"
@@ -66,3 +86,63 @@ responses:
       Make good behaviours as easy to pick up as possible, whilst increasing friction to bad habits
   - text: |
       Create a habit tracker, cross off the actions that you manage to achieve each day
+
+  utter_ask_feelings:
+  - text: "How are you feeling today?"
+  utter_ask_stuck_to_plans:
+  - text: "Did you stick to your plans today?"
+  utter_ask_focus_on_tasks:
+  - text: "Were you completely focused on your tasks?"
+  utter_ask_strategic:
+  - text: "Were you strategic about your tasks?"
+  utter_ask_improvements:
+  - text: "What can be done better? What can you improve?"
+  utter_ask_self_reflection:
+  - text: "Summarise your self-reflection in one sentence?"
+  utter_slots_values:
+  - text: "Here's your daily self reflection:\n
+            - Feelings? {feelings}\n
+            - Stuck to plans? {stuck_to_plans}\n
+            - Focused on tasks? {focus_on_tasks}\n
+            - Being strategic? {strategic}\n
+            - What can be improved? {improvements}\n
+            - Self reflection: {self_reflection}"
+  utter_ask_continue:
+  - text: "Sorry, I don't quite understand. Do you want to continue?"
+
+actions:
+- action_submit_results
+- validate_daily_reflection_form
+
+forms:
+  daily_reflection_form:
+    feelings:
+      - type: from_entity
+        entity: feelings
+    stuck_to_plans:
+      - type: from_intent
+        intent: affirm
+        value: True
+      - type: from_intent
+        intent: deny
+        value: False
+    focus_on_tasks:
+      - type: from_intent
+        intent: affirm
+        value: True
+      - type: from_intent
+        intent: deny
+        value: False
+    strategic:
+      - type: from_intent
+        intent: affirm
+        value: True
+      - type: from_intent
+        intent: deny
+        value: False
+    improvements:
+      - type: from_entity
+        entity: improvements
+    self_reflection:
+      - type: from_text
+        intent: inform

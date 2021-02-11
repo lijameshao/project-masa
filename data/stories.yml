@@ -1,45 +1,63 @@
 version: "2.0"
 stories:
-- story: ask for quotes happy path
+# - story: ask for quotes happy path
+#   steps:
+#   - intent: greet
+#   - action: utter_greet
+#   - intent: ask_quotes
+#   - action: utter_quotes
+#   - action: utter_did_that_help
+#   - intent: affirm
+#   - action: utter_goodbye
+
+# - story: ask for quotes sad path
+#   steps:
+#   - intent: greet
+#   - action: utter_greet
+#   - intent: ask_quotes
+#   - action: utter_quotes
+#   - action: utter_did_that_help
+#   - intent: deny
+#   - action: utter_cheer_up
+#   - action: utter_goodbye
+
+- story: survey daily reflection happy path
   steps:
   - intent: greet
   - action: utter_greet
-  - intent: ask_quotes
-  - action: utter_quotes
-  - action: utter_did_that_help
   - intent: affirm
-  - action: utter_goodbye
+  - action: daily_reflection_form
+  - active_loop: daily_reflection_form
 
-- story: ask for quotes sad path
+- story: no daily reflection survey
   steps:
   - intent: greet
   - action: utter_greet
-  - intent: ask_quotes
-  - action: utter_quotes
-  - action: utter_did_that_help
   - intent: deny
-  - action: utter_cheer_up
   - action: utter_goodbye
 
-# - story: ask for help to focus
-#   steps:
-#   - intent: greet
-#   - action: utter_greet
-#   - intent: ask_focus
-#   - action: utter_focus
-  # - action: utter_did_that_help
-  # - intent: affirm
-  # - action: utter_happy
-  # - action: utter_goodbye
+- story: survey daily reflection stop
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: affirm
+  - action: daily_reflection_form
+  - active_loop: daily_reflection_form
+  - intent: out_of_scope
+  - action: utter_ask_continue
+  - intent: deny
+  - action: action_deactivate_loop
+  - active_loop: null
+  - action: utter_goodbye
 
-
-# - story: ask for help to form habits
-#   steps:
-#   - intent: greet
-#   - action: utter_greet
-#   - intent: ask_habits
-#   - action: utter_habits
-  # - action: utter_did_that_help
-  # - intent: affirm
-  # - action: utter_happy
-  # - action: utter_goodbye
+- story: survey daily reflection continue
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: affirm
+  - action: daily_reflection_form
+  - active_loop: daily_reflection_form
+  - intent: out_of_scope
+  - action: utter_ask_continue
+  - intent: affirm
+  - action: daily_reflection_form
